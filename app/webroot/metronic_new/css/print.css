@@ -1,0 +1,48 @@
+/***
+Import fonts
+***/
+.header {
+	display: none;
+}
+
+.page-sidebar {
+	display: none;
+}
+
+.color-panel {
+	display: none;
+}
+
+.hidden-print {
+	display: none;
+}
+
+.footer {
+	display: none;
+}
+
+.no-page-break {
+	page-break-after: avoid;
+}
+
+.page-container {
+	margin: 0px;
+	padding: 0px;
+}
+
+.page-content {
+	min-height: auto !important;
+}
+
+.hidden-print{
+	display:none;
+}
+
+
+@media (max-width: 767px) {
+	.row-fluid .span6 {
+	    width: 48.717948717948715%;
+	    *width: 48.664757228587014%;
+	    float:left;
+	  }
+}
