@@ -69,7 +69,7 @@ define('TITLESITE','DewTouch');
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
-
+CakePlugin::load('DebugKit'); 
 /**
  * To prefer app translation over plugin translation, you can set
  *
