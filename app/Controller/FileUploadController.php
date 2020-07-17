@@ -28,9 +28,11 @@ class FileUploadController extends AppController {
 						$item2 = $row[1];
 						if($i === 0) //if first row
 						{
+							$header1 = explode(' ',$item1)[0];
+							$header2 = explode(' ',$item2)[0];
 							// get header
 							$data_header = array(
-								strtolower($item1),strtolower($item2)
+								strtolower($header1),strtolower($header2)
 							);						
 						
 						}
@@ -56,7 +58,7 @@ class FileUploadController extends AppController {
 			else{
 				   $val_message = "Please choose file";
 			}
-			$this->redirect(['controller' => 'FileUpload', 'action' => 'index',"with_message" =>$val_message]);
+			return $this->redirect(['controller' => 'FileUpload', 'action' => 'index',"with_message" =>$val_message]);
 			//$this->render(FALSE);
 		
 	}
