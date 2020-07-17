@@ -17,5 +17,9 @@
 			
 // 			$this->set('title',__('Question: Please change Pop Up to mouse over (soft click)'));
 		}
+		public function show_selection(){
+			 $type = $this->request->data["Type"]["type"];
+			 $this->set('type',$type);
+		}
 		
 	}

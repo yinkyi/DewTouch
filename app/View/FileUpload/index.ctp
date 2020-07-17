@@ -13,10 +13,17 @@
 		<h3>Import Form</h3>
 	</div>
 <?php
-echo $this->Form->create('FileUpload');
-echo $this->Form->input('file', array('label' => 'File Upload', 'type' => 'file'));
-echo $this->Form->submit('Upload', array('class' => 'btn btn-primary'));
-echo $this->Form->end();
+// echo $this->Form->create('FileUpload');
+// echo $this->Form->input('file', array('label' => 'File Upload', 'type' => 'file'));
+// echo $this->Form->submit('Upload', array('class' => 'btn btn-primary'));
+// echo $this->Form->end();
+	echo $this->Form->create('FileUpload' ,['type' => 'file','url' => ['controller'=>'FileUpload','action' => 'upload'],'id'=>'saveForm','class'=>'form-inline','role'=>'form']);
+	//echo  $this->Form->create('FileUpload',array('controller'=>'FileUpload','action'=>'upload','id'=>'saveForm'));
+	echo $this->Form->input('csv', ['type'=>'file','class' => 'form-control', 'label' => false, 'placeholder' => 'csv upload']);
+	echo $this->Form->submit('Upload', array('class' => 'btn btn-primary'));
+	if (isset($message)): echo '<span style="color:red">'.$message.'</span>';
+	endif;
+	echo $this->Form->end();
 ?>
 
 	<hr />
@@ -50,3 +57,26 @@ endforeach;
 		</tbody>
 	</table>
 </div>
+<?php 
+   		echo $this->Html->script('/metronic_new/plugins/jquery-1.10.2.min'); ?>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#saveForm').submit(function(){
+			var formdatas = new FormData($('#saveForm')[0]);
+			var formUrl = $(this).attr('action');	
+            $.ajax({
+                type: 'POST',
+                url: formUrl,
+                data: formdatas,
+                success: function(data,textStatus,xhr){
+                        alert(data);
+                },
+                error: function(xhr,textStatus,error){
+                        alert(textStatus);
+                }
+            });	
+                
+            return false;
+        });
+    });
+</script>

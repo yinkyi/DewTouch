@@ -12,7 +12,7 @@
 				<br/>
 				<br/>
 				
-				<img src="/files/screenshot/screenshot1.png" style="height: 150px" alt="">
+				<img src="<?php echo $this->webroot .'/files/screenshot/screenshot1.png' ?>" style="height: 150px" alt="">
 				
 				<br/>
 				<br/>
