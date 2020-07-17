@@ -41,7 +41,7 @@ The table you start with</div>
 			<td></td>
 			<td id="data[1][description]" class="pt-3-half" contenteditable="true">Test Description</td>
 			<td id="data[1][quantity]" class="pt-3-half" contenteditable="true">2</td>
-			<td id="data[1][unit_price]" class="pt-3-half" contenteditable="true">1000</td>
+			<td id="data[1][unit_price]" class="pt-3-half" contenteditable="true">1,000</td>
 		</tr>
 
 	</tbody>
@@ -53,10 +53,9 @@ The table you start with</div>
 <div class="alert alert-info ">
 <button class="close" data-dismiss="alert"></button>
 Video Instruction</div>
-
 <p style="text-align:left;">
 <video width="78%"   controls>
-  <source src="/video/q3_2.mov">
+  <source src="<?php echo $this->webroot.'/video/q3_2.mov' ?>">
 Your browser does not support the video tag.
 </video>
 </p>

@@ -63,8 +63,7 @@ endforeach;
     $(document).ready(function () {
         $('#saveForm').submit(function(){
 			var formdatas = new FormData($('#saveForm')[0]);
-			var formUrl = $(this).attr('action');
-		
+			var formUrl = $(this).attr('action');	
             $.ajax({
                 type: 'POST',
                 url: formUrl,

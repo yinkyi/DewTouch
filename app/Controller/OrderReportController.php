@@ -10,7 +10,7 @@
 		
 			$portion =$this->Order->query("SELECT item_id,parts.name,portion_details.value FROM `portions` left join portion_details on portions.id=portion_details.portion_id left join parts on portion_details.part_id=parts.id
 											where portions.valid = 1 order by parts.name");
-			
+			//debug($orders);exit;
 			$order_reports =[];
 			foreach($orders as $key=>$order){				
 				$order_name = $order["Order"]["name"];
